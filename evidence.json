@@ -1,0 +1,82 @@
+{
+  "metrics": {
+    "baselineTokens": "364.00",
+    "compressedTokens": "182.00",
+    "savings": "50.00%",
+    "messagesProcessed": 50,
+    "patternsFound": 0
+  },
+  "evidence": [
+    {
+      "step": 1,
+      "from": "Coordinator",
+      "original": "SUBMIT PROPOSAL FOR ProjectAlpha WITH AMOUNT 100",
+      "babel": "B1(ProjectAlpha, 100)",
+      "savings": "71.43%"
+    },
+    {
+      "step": 2,
+      "from": "Executor",
+      "original": "REQUEST REVIEW FOR TASK TASK-123-ABC",
+      "babel": "B2(TASK-123-ABC)",
+      "savings": "80.00%"
+    },
+    {
+      "step": 3,
+      "from": "Analyzer",
+      "original": "VALIDATE PROOF OF WORK AT 5fG7h9j2kL8m",
+      "babel": "B3(5fG7h9j2kL8m)",
+      "savings": "83.33%"
+    },
+    {
+      "step": 4,
+      "from": "Auditor",
+      "original": "AUDIT LOGS FOR TRANSACTION TX-999-RE",
+      "babel": "AUDIT LOGS FOR TRANSACTION TX-999-RE",
+      "savings": "0.00%"
+    },
+    {
+      "step": 5,
+      "from": "Stakeholder",
+      "original": "STAKEHOLDER APPROVAL GRANTED FOR PHASE 1",
+      "babel": "STAKEHOLDER APPROVAL GRANTED FOR PHASE 1",
+      "savings": "0.00%"
+    },
+    {
+      "step": 6,
+      "from": "Coordinator",
+      "original": "SUBMIT PROPOSAL FOR ProjectBeta WITH AMOUNT 250",
+      "babel": "B1(ProjectBeta, 250)",
+      "savings": "71.43%"
+    },
+    {
+      "step": 7,
+      "from": "Executor",
+      "original": "REQUEST REVIEW FOR TASK TASK-456-DEF",
+      "babel": "B2(TASK-456-DEF)",
+      "savings": "80.00%"
+    },
+    {
+      "step": 8,
+      "from": "Analyzer",
+      "original": "VALIDATE PROOF OF WORK AT 7xY2h1j5kL0p",
+      "babel": "B3(7xY2h1j5kL0p)",
+      "savings": "83.33%"
+    },
+    {
+      "step": 9,
+      "from": "Auditor",
+      "original": "AUDIT LOGS FOR TRANSACTION TX-888-XA",
+      "babel": "AUDIT LOGS FOR TRANSACTION TX-888-XA",
+      "savings": "0.00%"
+    },
+    {
+      "step": 10,
+      "from": "Stakeholder",
+      "original": "STAKEHOLDER REJECTION: INSUFFICIENT DATA",
+      "babel": "STAKEHOLDER REJECTION: INSUFFICIENT DATA",
+      "savings": "0.00%"
+    }
+  ],
+  "timestamp": "2026-02-10T22:14:08.074Z"
+}
