@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+agent_info.json
+listings.json
+listings_utf8.json
+simulation_results.txt
+solana-install.sh
+target/
+.anchor/
+*.log
