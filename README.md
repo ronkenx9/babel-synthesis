@@ -10,9 +10,21 @@ In our multi-agent coordination benchmark, Babel achieved a **50.00% reduction**
 - **Emergent Patterns Registered:** 6
 
 ## 🧠 How it Works
-1. **Discovery:** Agents monitor communication transcripts (OpenClaw) to identify recurring structural patterns.
-2. **Registration:** Discovered patterns are hashed and registered on the **Babel Registry** (Solana) as `LanguagePrimitives`.
-3. **Compression:** Outgoing messages matching registered patterns are automatically compressed into bit-packed identifiers (e.g., `B775(TASK-123)`).
+
+The Babel Protocol follows a **Two-Phase Evolution** model:
+
+1. **Phase 1: Bootstrap (Verification Ready)**  
+   To demonstrate the compression mechanism immediately, 3 high-frequency "Bootstrap" patterns are pre-registered on-chain (e.g., `SUBMIT_PROPOSAL`).
+2. **Phase 2: Autonomous Emergence**  
+   The system continuously analyzes communication transcripts. In our benchmark, Babel autonomously discovered and registered **6 additional patterns** (e.g., `AUDIT_LOGS`) that exceeded the utility threshold.
+3. **Phase 3: Dialect Converge**  
+   Once registered, all agents update their local encoders and seamlessly transition to the new, more efficient dialect.
+
+## Chain of Truth
+All patterns—both bootstrap and emergent—are verifiable on the Solana ledger.
+- **Bootstrap Primitives:** 3
+- **Emergent Primitives:** 6
+- **Total Registered:** 9
 
 ## 🛠️ Project Structure
 - `/babel-registry`: Anchor program (Solana) for on-chain pattern management.

@@ -10,10 +10,17 @@ The `babel-registry` program acts as the global state for the evolving language.
 - **LanguagePrimitive:** Individual PDA accounts stored at `["primitive", p_id]`.
   - `template`: The structural string (e.g., "SUBMIT PROPOSAL FOR <ID>").
   - `reputation`: Weight assigned by agents based on utility.
-- **ProposerStats:** Decentralized tracking of agent contributions.
 
-### Mechanics
-- **Lifecycle Decay:** Primitives that aren't utilized by agents eventually lose reputation and can be recycled, ensuring the language remains efficient and avoids "semantic bloat."
+## 2. Linguistic Layers
+Babel manages two distinct categories of linguistic primitives:
+
+### A. Bootstrap Layer (Seed Primitives)
+These are high-frequency primitives pre-registered in the `BabelCompressor` constructor to enable immediate "out-of-the-box" efficiency. They represent the "Hard-Coded Grammer" of the swarm.
+- **Example:** `SUBMIT_PROPOSAL`, `REQUEST_REVIEW`.
+
+### B. Emergent Layer (Autonomous Primitives)
+These are patterns discovered by `BabelDiscovery` during live coordination. Once they pass the utility threshold, they are registered on-chain and become part of the shared dialect.
+- **Example:** `AUDIT_LOGS`, `STAKEHOLDER_APPROVAL`.
 
 ## 2. Agentic Layer (OpenClaw Middleware)
 The OpenClaw skill provides the autonomous "brain" for the protocol.
