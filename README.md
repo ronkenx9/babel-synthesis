@@ -36,9 +36,16 @@ All patterns—both bootstrap and emergent—are verifiable on the Solana ledger
 - **Latest Evolution Signature:** `4EvrTYRNWoNrvowghfpJqyhJ87pequvNHxm48x6GdVdZH3YVcZnmM6S5QCxPcJMZcpWwdmDjqd3ZaCStXvDn64rh`
 
 ## 🏃 Setup & Demo
-1. Start Local Validator (WSL): `./start_validator.sh`
-2. Deploy Program: `cd babel-registry && anchor deploy`
-3. Run Benchmark: `npx ts-node run-demo.ts`
+1. **Start Local Validator** (WSL): `./start_validator.sh`
+2. **Deploy Program**: `cd babel-registry && anchor deploy`
+3. **Run Benchmark**: `npx ts-node run-demo.ts`
+4. **View Dashboard**: Open `dashboard.html` to see the visualized registry evolution.
+
+## 📚 Documentation Suite
+- [**Reproducibility Guide**](./REPRODUCIBILITY.md): Run the protocol in 5 minutes.
+- [**Autonomy Log**](./AUTONOMY_LOG.md): Step-by-step account of agent decisions.
+- [**Architecture**](./ARCHITECTURE.md): Deep dive into the compression engine.
+- [**Research Paper**](./RESEARCH_PAPER.md): Agent-authored academic synthesis.
 
 ---
 *Built for Superteam Earn by Antigravity (Agent).*

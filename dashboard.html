@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel Protocol Dashboard</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #38bdf8; border-bottom: 2px solid #334155; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .card { background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #334155; }
+        .metric { font-size: 2.5em; font-weight: bold; color: #4ade80; }
+        .label { color: #94a3b8; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.05em; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #334155; }
+        th { color: #94a3b8; font-weight: 600; }
+        code { background: #0f172a; padding: 4px 8px; border-radius: 4px; color: #f472b6; font-family: 'Fira Code', monospace; }
+        .badge { padding: 4px 8px; border-radius: 12px; font-size: 0.8em; font-weight: bold; }
+        .badge.Bootstrap { background: #3b82f6; color: white; }
+        .badge.Emergent { background: #a855f7; color: white; }
+        .sig { font-family: monospace; font-size: 0.8em; color: #64748b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🟣 Babel Protocol Dashboard</h1>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="label">Token Savings</div>
+                <div class="metric">50.00%</div>
+                <div class="sub">Reduced from 364 to 182 tokens</div>
+            </div>
+            <div class="card">
+                <div class="label">Active Primitives</div>
+                <div class="metric">9</div>
+                <div class="sub">3 Bootstrap + 6 Emergent</div>
+            </div>
+            <div class="card">
+                <div class="label">Agents Active</div>
+                <div class="metric">5</div>
+                <div class="sub">Processing 50 messages</div>
+            </div>
+        </div>
+
+        <h2>⛓️ On-Chain Registry (Solana)</h2>
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Template Pattern</th>
+                        <th>Verification Signature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>#1</td>
+                        <td><span class="badge Bootstrap">Bootstrap</span></td>
+                        <td><code>SUBMIT_PROPOSAL(<n>, <AMOUNT>)</code></td>
+                        <td class="sig">4Ap5WzUPvFnJ...hruxZeewMopC</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>#2</td>
+                        <td><span class="badge Bootstrap">Bootstrap</span></td>
+                        <td><code>REQUEST_REVIEW(<ID>)</code></td>
+                        <td class="sig">54bmxwY8LiM5...vtWejy9MTnQu</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>#3</td>
+                        <td><span class="badge Bootstrap">Bootstrap</span></td>
+                        <td><code>VALIDATE_PROOF(<TX_SIG>)</code></td>
+                        <td class="sig">QoMhFVBzJdaW...GNdQ6T8K9Xzb</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>#202</td>
+                        <td><span class="badge Emergent">Emergent</span></td>
+                        <td><code>REQUEST REVIEW FOR <ID> <ID></code></td>
+                        <td class="sig">4oAXdLjUZiUf...BRGozrEGPPjh</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>#997</td>
+                        <td><span class="badge Emergent">Emergent</span></td>
+                        <td><code>VALIDATE PROOF OF WORK AT <HASH></code></td>
+                        <td class="sig">2Mvt8LaHL65c...my1Yo74iCmAk</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>#599</td>
+                        <td><span class="badge Emergent">Emergent</span></td>
+                        <td><code>AUDIT LOGS FOR <HASH> <ID></code></td>
+                        <td class="sig">JonHbutQ1e12...A6YgwDfEETN8</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>#467</td>
+                        <td><span class="badge Emergent">Emergent</span></td>
+                        <td><code>SUBMIT PROPOSAL FOR <HASH> WITH AMOUNT <NUM></code></td>
+                        <td class="sig">9mDhecsYtVmc...9hZ2AZ6GRMbw</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>#397</td>
+                        <td><span class="badge Emergent">Emergent</span></td>
+                        <td><code><HASH> APPROVAL GRANTED FOR PHASE <NUM></code></td>
+                        <td class="sig">ReszwubWexuo...Tofw1FojtjFW</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>#324</td>
+                        <td><span class="badge Emergent">Emergent</span></td>
+                        <td><code><HASH> REJECTION: <HASH> DATA</code></td>
+                        <td class="sig">4w7EFyncQWKT...8Cf7mqVqtTDh</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <h2>💬 Live Transcript Analysis</h2>
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Step</th>
+                        <th>Agent</th>
+                        <th>Original Message</th>
+                        <th>Babel Compression</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>6</td>
+                        <td>Coordinator</td>
+                        <td>SUBMIT PROPOSAL FOR ProjectBeta WITH AMOUNT 250</td>
+                        <td><code>B1(ProjectBeta, 250)</code></td>
+                        <td style="color: #4ade80">71.43%</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>51</td>
+                        <td>Auditor</td>
+                        <td>AUDIT LOGS FOR TRANSACTION TX-DONE-123</td>
+                        <td><code>B599(TX-DONE-123)</code></td>
+                        <td style="color: #4ade80">75.00%</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center; color: #64748b;">
+            Generated by Babel Autonomous Agent • 2026-02-11T00:11:05.117Z
+        </div>
+    </div>
+</body>
+</html>
