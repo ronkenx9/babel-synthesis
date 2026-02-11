@@ -1,0 +1,96 @@
+{
+  "protocol": "Babel",
+  "version": "1.1.0",
+  "methodology": "Bootstrap + Emergent Discovery",
+  "on_chain": {
+    "program_id": "FPSsFDUBUUk4noLmg2TvCgjrf9suQsbCtCd8QHzsYk3c",
+    "network": "Solana Local (Agave 3.0.15)",
+    "registry": {
+      "bootstrap_count": 3,
+      "emergent_count": 6,
+      "total_primitives": 9
+    },
+    "primitives": [
+      {
+        "id": 1,
+        "template": "SUBMIT_PROPOSAL(<n>, <AMOUNT>)",
+        "type": "Bootstrap",
+        "sig": "4Ap5WzUPvFnJodfjVYvPeNoRk1dsREsnrzY4qVuLXsAqCLba7G1BD63dh4i6QCroBcojrwEapj4fhruxZeewMopC"
+      },
+      {
+        "id": 2,
+        "template": "REQUEST_REVIEW(<ID>)",
+        "type": "Bootstrap",
+        "sig": "54bmxwY8LiM5ryWuJZ9SvrY3jKRpCLNWNmiKUQcThzApuLA73XVmg497p4ateUSBkup257ubEVj3vtWejy9MTnQu"
+      },
+      {
+        "id": 3,
+        "template": "VALIDATE_PROOF(<TX_SIG>)",
+        "type": "Bootstrap",
+        "sig": "QoMhFVBzJdaWW5TWqVfKqKrnPV8LcTHMKEELZCj71bpjYPPGKsN4VScakBCkWQsWQPMMW5Nd9ycGNdQ6T8K9Xzb"
+      },
+      {
+        "id": 202,
+        "template": "REQUEST REVIEW FOR <ID> <ID>",
+        "type": "Emergent",
+        "sig": "4oAXdLjUZiUfZBPSDLDmRzkAFL5zN3QCMJrgf88y1uvujHL3YDQNNQ2amNBPjSNnmvhh51TejYh3BRGozrEGPPjh"
+      },
+      {
+        "id": 997,
+        "template": "VALIDATE PROOF OF WORK AT <HASH>",
+        "type": "Emergent",
+        "sig": "2Mvt8LaHL65cRAzsSXJ2VnrfQE1UdtmiUYAohiE5tCAFUjyw3CxTsepptdvioobRG5pvyFz85VEBmy1Yo74iCmAk"
+      },
+      {
+        "id": 599,
+        "template": "AUDIT LOGS FOR <HASH> <ID>",
+        "type": "Emergent",
+        "sig": "JonHbutQ1e12nGCgDQAbUv7qu8UZmCDtFeHGVfbXeRkhBPRjeZzsSyeDM2N262j7HCcGGVEKbsmA6YgwDfEETN8"
+      },
+      {
+        "id": 467,
+        "template": "SUBMIT PROPOSAL FOR <HASH> WITH AMOUNT <NUM>",
+        "type": "Emergent",
+        "sig": "9mDhecsYtVmcVkHCYfpipknrFomDLNbkDbqmVTqQNnUZefKp1NtZpcvFPho51qaNm6EkuPkzx8H9hZ2AZ6GRMbw"
+      },
+      {
+        "id": 397,
+        "template": "<HASH> APPROVAL GRANTED FOR PHASE <NUM>",
+        "type": "Emergent",
+        "sig": "ReszwubWexuoemRzpoM3R66Au5FGPGWEpN7GbrHDCJBme9makqreZLKsY2XT9jXLWEFyN4D2zFJTofw1FojtjFW"
+      },
+      {
+        "id": 324,
+        "template": "<HASH> REJECTION: <HASH> DATA",
+        "type": "Emergent",
+        "sig": "4w7EFyncQWKTj3o3ubyA6tPPAaKcZGUYPpjpBya6BScpiXyRxUx8H8ifs9tPriveMF5jSxNFrvFX8Cf7mqVqtTDh"
+      }
+    ]
+  },
+  "metrics": {
+    "baselineTokens": 364,
+    "compressedTokens": 182,
+    "savings": "50.00%",
+    "agent_count": 5,
+    "message_count": 50
+  },
+  "transcript_sample": [
+    {
+      "step": 6,
+      "from": "Coordinator",
+      "original": "SUBMIT PROPOSAL FOR ProjectBeta WITH AMOUNT 250",
+      "babel": "B1(ProjectBeta, 250)",
+      "savings": "71.43%",
+      "type": "Bootstrap_Compressed"
+    },
+    {
+      "step": 51,
+      "from": "Auditor",
+      "original": "AUDIT LOGS FOR TRANSACTION TX-DONE-123",
+      "babel": "B599(TX-DONE-123)",
+      "savings": "75.00%",
+      "type": "Emergent_Compressed"
+    }
+  ],
+  "timestamp": "2026-02-10T23:59:00.000Z"
+}
