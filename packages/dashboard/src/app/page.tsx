@@ -11,7 +11,6 @@ import evidenceData from "@/data/evidence.json";
    ======================================================== */
 
 const GITHUB_URL = "https://github.com/ronkenx9/babel-synthesis";
-const EXPLORER_BASE = "https://explorer.solana.com";
 const PROGRAM_ID = "FPSsFDUBUUk4noLmg2TvCgjrf9suQsbCtCd8QHzsYk3c";
 
 export default function Dashboard() {
@@ -345,13 +344,22 @@ export default function Dashboard() {
           </div>
 
           <a
-            href={`${EXPLORER_BASE}/tx/${on_chain.primitives[on_chain.primitives.length - 1].sig}?cluster=custom`}
+            href={`${GITHUB_URL}/blob/master/evidence.json`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full bg-secondary text-background font-bold py-3 rounded-slab hover:bg-secondary-light transition-all flex items-center justify-center gap-2 mt-4 uppercase tracking-tighter cursor-pointer"
           >
-            View on Solana Explorer <ExternalLink className="w-4 h-4" />
+            Verify Evidence on GitHub <ExternalLink className="w-4 h-4" />
           </a>
+
+          <div className="mt-4 bg-warning/10 border border-warning/20 rounded-slab p-3 text-xs text-warning flex items-start gap-2">
+            <ShieldCheck className="w-4 h-4 mt-0.5 flex-shrink-0" />
+            <span>
+              <strong>Localnet Deployment:</strong> Transactions are recorded on a Solana local validator (Agave 3.0.15).
+              To verify on-chain, run <code className="font-mono bg-background/50 px-1 rounded">solana-test-validator</code> and
+              replay the demo. Full steps in the <a href={`${GITHUB_URL}#-reproduction-instructions`} target="_blank" rel="noopener noreferrer" className="underline hover:text-secondary-light">README</a>.
+            </span>
+          </div>
         </div>
 
         <div className="mt-8 text-sm text-text-secondary flex items-center justify-center gap-2">
