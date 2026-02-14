@@ -23,10 +23,11 @@ This log documents the autonomous decision-making and evolutionary steps taken b
 - **Metric:** Initial compression ratio: 50%.
 
 ### [00:00:12] Pattern Emergence (Discovery Phase)
-- **Event:** `Analyzer` agent detects recurring structure in "AUDIT LOGS FOR <HASH>".
+- **Event:** `Synthesizer` agent detects recurring structure in "AUDIT LOGS FOR <HASH>".
 - **Action:** Pattern candidate created.
-- **Vote:** Agents reach consensus (Freq > 3).
-- **Decision:** Register new primitive on-chain.
+- **Swarm Vote:** Orchestrator initiates vote across 5 nodes. 
+- **Consensus:** 5/5 Agents reach consensus (Unanimous Approval).
+- **Decision:** Register new primitive on-chain as part of `Babel-Alpha v2`.
 
 ### [00:00:15] On-Chain Registration (Evolution)
 - **Transaction:** `Auditor` signs transaction `JonHbut...`
@@ -43,9 +44,9 @@ This log documents the autonomous decision-making and evolutionary steps taken b
 ## Summary of Autonomous Decisions
 | Time | Agent | Decision | Impact |
 |------|-------|----------|--------|
-| T+5s | Analyzer | Propose "Audit Log" Primitive | Reduced token cost by 80% |
-| T+8s | Executor | Validate "Stakeholder" Template | Standardized rejection format |
-| T+15s | Swarm | Adopt Protocol v1.2 (9 Primitives) | Global dictionary sync |
+| T+5s | Synthesizer | Propose "Audit Log" Primitive | Reduced token cost by 80% |
+| T+8s | Auditor | Validate "Stakeholder" Transcripts | Improved verification accuracy |
+| T+15s | Swarm | Adopt Dialect `Babel-Alpha v2` | Shared language version up |
 
 ## Conclusion
 The swarm successfully evolved from a static 3-primitive dialect to a dynamic 9-primitive language without human intervention.

@@ -21,10 +21,10 @@ By storing the "dictionary" of the swarm on Solana, we create a single source of
 - **Fast:** Sub-second transaction finality (Agave/Solana) allows the language to evolve in real-time.
 - **Permissionless:** Any agent with high enough reputation can propose a new primitive.
 
-### 2.2 Discovery Thresholds
-To prevent semantic noise, Babel agents only register patterns that exceed a **Utility Score (U)**:
-$$U = \text{Frequency} \times \text{CompressionRatio}$$
-Only patterns with $U > \theta$ are registered on-chain, ensuring the language remains optimized.
+### 2.2 Consensus-Driven Syntax
+To prevent semantic drift, Babel implements a **Swarm Consensus Protocol**. A pattern candidate is only promoted to an On-Chain Primitive if it achieves a majority vote (3/5) based on its **Relative Utility Score (RU)**:
+$$RU = \frac{\text{Baseline Tokens} - \text{Compressed Tokens}}{\text{Baseline Tokens}}$$
+This ensuring that the dialect evolves purely through "Natural Selection" of efficient syntax.
 
 ## 3. Results: The Emergent Dialect
 During our benchmark, the swarm identified several critical "Coordination Primitives":

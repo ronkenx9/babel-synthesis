@@ -32,12 +32,12 @@ In the main terminal:
 ```
 *This builds the Anchor program and deploys it to your local validator.*
 
-## 4. Run the Agent Swarm
+## 4. Run the Swarm Demo
 Execute the autonomous coordination benchmark:
 ```bash
-npx ts-node run-demo.ts
+node --experimental-strip-types run-demo-v2.ts
 ```
-*Watch the agents discover patterns and register them on-chain in real-time.*
+*Watch the 5-agent swarm discover patterns, vote via consensus, and evolve the language in real-time.*
 
 ## 5. Verify Results
 Generate the evidence package and audit the chain state:
@@ -47,4 +47,8 @@ npx ts-node verify-on-chain.ts
 *This will output the `evidence.json` file and listing of all registered primitives.*
 
 ## 6. View Dashboard
-Open `dashboard.html` in your browser to see the visualized metrics and registry evolution.
+Access the premium Tower of Babel dashboard:
+```bash
+cd packages/dashboard && npm run dev
+```
+Explore the Dialect Evolution timeline and real-time agent coordination feed.

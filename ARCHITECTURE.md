@@ -1,6 +1,4 @@
-# Architecture: The Babel Protocol
-
-Babel is a hybrid protocol consisting of a **Solana On-Chain Registry** and an **Agentic Middleware** (OpenClaw Skill).
+Babel is a hybrid protocol consisting of a **Solana On-Chain Registry** and an **Autonomous Multi-Agent Swarm** (Node.js Worker Threads).
 
 ## 1. On-Chain Layer (Solana/Anchor)
 The `babel-registry` program acts as the global state for the evolving language.
@@ -19,26 +17,27 @@ These are high-frequency primitives pre-registered in the `BabelCompressor` cons
 - **Example:** `SUBMIT_PROPOSAL`, `REQUEST_REVIEW`.
 
 ### B. Emergent Layer (Autonomous Primitives)
-These are patterns discovered by `BabelDiscovery` during live coordination. Once they pass the utility threshold, they are registered on-chain and become part of the shared dialect.
+These are patterns discovered by `BabelDiscovery` during live coordination and adopted via **3/5 Swarm Consensus**. Once they pass the vote, they are registered on-chain.
 - **Example:** `AUDIT_LOGS`, `STAKEHOLDER_APPROVAL`.
 
-## 2. Agentic Layer (OpenClaw Middleware)
-The OpenClaw skill provides the autonomous "brain" for the protocol.
+## 2. Swarm Layer (Multi-Agent Orchestration)
+The system operates as a self-coordinating swarm of 5 independent threads.
 
-### BabelDiscovery (Emergent Pattern Analysis)
-The discovery engine processes raw agent transcripts to find recurring structural motifs.
-- **Pattern Abstraction:** Replaces dynamic values (IDs, Hashes, Numbers) with generic placeholders.
-- **Utility Threshold:** Patterns only qualify for registration if they appear `N` times and provide `> X%` theoretical space savings.
+### SwarmOrchestrator
+Coordinates communication between the swarm, manages Consensus Votes, and tracks Dialect Evolution.
 
-### BabelCompressor (The Encoder/Decoder)
-- **Lazy Compression:** The compressor only activates once it has fetched the latest registry state from Solana.
-- **Parameter Extraction:** When a message matches a primitive regex, the dynamic values are extracted and packed into the compressed Babel-format: `B{ID}(PARAM1, PARAM2)`.
+### Agent Workers (Nodes)
+Independent Node.js Worker threads (Architect, Auditor, Negotiator, Validator, Synthesizer) that reasoning over message compression and vote on pattern adoption.
 
-## 3. The Self-Evolution Loop
-1. Agents communicate in Natural Language.
-2. `BabelDiscovery` identifies a new coordinate: "REQUEST REVIEW FOR TASK <ID>".
-3. Agent signs a transaction to register the primitive on Solana.
-4. All participating agents update their `BabelCompressor` and immediately begin using the shorter identifier.
+### Dialect Registry
+Named, versioned language tracking (e.g., `Babel-Alpha v1` → `Babel-Alpha v2`). Allows for historical traceability of linguistic evolution.
+
+## 3. The Self-Evolution Loop (v2)
+1. **Coordination:** Agents communicate over a high-speed message bus.
+2. **Discovery:** `BabelDiscovery` identifies recurrent structural motifs.
+3. **Consensus:** The Orchestrator calls a Vote; 3/5 agents must approve (Utility > Threshold).
+4. **On-Chain Proof:** Successful votes trigger a Solana transaction to register the primitive.
+5. **Convergence:** The Swarm adopts the new Dialect version and updates all local compressors.
 
 ## 4. Performance Benchmarks
 | Metric | Natural Language | Babel Protocol | Improvement |
