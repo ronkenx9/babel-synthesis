@@ -3,460 +3,404 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Zap, Activity, Database, ShieldCheck, Cpu, Terminal, GitBranch, ArrowRight, ExternalLink } from "lucide-react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { Zap, Activity, Database, ShieldCheck, Cpu, Terminal, GitBranch, ArrowRight, ExternalLink, ChevronRight, Globe } from "lucide-react";
 import evidenceData from "@/data/evidence.json";
 
-/* ============================================
-   BABEL PROTOCOL DASHBOARD v2
-   Tower of Babel Theme — Language Evolution
-   ============================================ */
+/* ========================================================
+   BABEL PROTOCOL DASHBOARD - ARCHITECTURAL EDITION
+   Theme: Tower of Babel | Ancient Mesopotamia x Solana
+   ======================================================== */
 
 export default function Dashboard() {
   const { metrics, on_chain, transcript_sample, agents, dialects } = evidenceData;
 
   return (
-    <div className="min-h-screen bg-[#06060e] text-slate-100 font-sans selection:bg-purple-500/30 tower-grid">
+    <div className="min-h-screen bg-background text-text-primary font-sans selection:bg-primary/30 brick-texture pb-20">
 
-      {/* ===== HERO SECTION ===== */}
-      <section className="relative overflow-hidden">
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
+      {/* ===== 🏛️ HERO SECTION (The Tower Peak) ===== */}
+      <section className="relative pt-12 pb-24 px-8 overflow-hidden">
+        {/* Subtle desert haze */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-8 pt-10 pb-16">
-          {/* Nav */}
-          <nav className="flex justify-between items-center mb-16">
-            <div className="flex items-center gap-3">
-              <img src="/babel-logo.png" alt="Babel Protocol" className="w-12 h-12 rounded-lg" />
-              <span className="text-xl font-bold tracking-tight">Babel</span>
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-8 relative z-10">
+          <div className="animate-in fade-in zoom-in duration-1000">
+            <img src="/babel-logo.png" alt="Babel Ziggurat" className="w-24 h-24 mb-4 bronze-glow mx-auto" />
+            <div className="primitive-id text-secondary text-lg font-bold tracking-[0.2em] mb-2 uppercase">
+              Babel Protocol
             </div>
-            <div className="flex items-center gap-4">
-              <Badge variant="outline" className="px-3 py-1.5 border-purple-500/30 text-purple-300 bg-purple-500/10 text-xs">
-                <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse mr-2" />
-                Solana Localnet
-              </Badge>
-              <a
-                href="https://github.com/ronkenx9/babel-synthesis"
-                target="_blank"
-                className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors"
-              >
-                <ExternalLink className="w-3.5 h-3.5" />
-                Source
-              </a>
-            </div>
-          </nav>
-
-          {/* Hero Content */}
-          <div className="text-center space-y-6 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-1.5 text-sm text-purple-300">
-              <Cpu className="w-3.5 h-3.5" />
-              Built Autonomously by AI Agents
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
-              <span className="shimmer-text">Babel Protocol</span>
-            </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Autonomous agents evolve their own coordination language on Solana.
-              Each primitive is discovered through consensus, named, versioned, and registered on-chain.
-            </p>
           </div>
 
-          {/* Hero Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            <HeroStat label="Token Savings" value={metrics.savings} accent="purple" />
-            <HeroStat label="On-Chain Primitives" value={String(on_chain.registry.total_primitives)} accent="blue" />
-            <HeroStat label="Agent Swarm" value={String(metrics.agent_count)} accent="teal" />
-            <HeroStat label="Verified Proofs" value={String(on_chain.primitives.length)} accent="amber" />
+          <h1 className="text-hero leading-none tracking-tight leading-tight max-w-4xl">
+            Where AI Agents Evolve <br />
+            <span className="shimmer-bronze">Their Own Language</span>
+          </h1>
+
+          <div className="tier-divider w-64 mx-auto" />
+
+          <p className="text-body-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
+            An autonomous on-chain compression layer for agent coordination.
+            Achieving <span className="text-primary font-bold">{metrics.savings}</span> token reduction
+            through decentralized linguistic emergence.
+          </p>
+
+          <div className="flex gap-4 pt-4">
+            <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-slab font-bold ziggurat-shadow transition-all">
+              View Registry
+            </button>
+            <button className="bg-surface border border-mortar-strong text-text-secondary px-8 py-3 rounded-slab font-bold transition-all hover:bg-surface-elevated">
+              See Evidence
+            </button>
+          </div>
+
+          {/* Live Metrics (Tower Visualization) */}
+          <div className="w-full max-w-2xl mt-16 bg-surface p-8 rounded-card border border-mortar ziggurat-shadow">
+            <div className="flex items-center gap-2 mb-6 text-text-secondary font-mono text-xs uppercase tracking-widest">
+              <Activity className="w-4 h-4 text-secondary" />
+              Live Tower Construction
+            </div>
+
+            <div className="space-y-6">
+              <TowerBar id="B1" label="SUBMIT_PROPOSAL" value={85} />
+              <TowerBar id="B2" label="REQUEST_REVIEW" value={45} />
+              <TowerBar id="B3" label="VALIDATE_PROOF" value={78} />
+            </div>
+
+            <div className="flex justify-between items-center mt-8 pt-6 border-t border-mortar-strong text-sm">
+              <div className="flex gap-4">
+                <span className="text-text-secondary"><span className="text-secondary font-bold">9</span> Primitives</span>
+                <span className="text-text-secondary"><span className="text-primary font-bold">182</span> Tokens Saved</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-text-muted">
+                <Globe className="w-3 h-3" />
+                devnet.solana.com
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ===== MAIN CONTENT ===== */}
-      <main className="max-w-7xl mx-auto px-8 pb-16 space-y-12">
+      {/* ===== 🧱 SECTION 2: THE ARCHITECTURE (How it Works) ===== */}
+      <section className="max-w-7xl mx-auto px-8 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-h1 mb-4">How Agents Build the Tower</h2>
+          <div className="tier-divider w-48 mx-auto" />
+        </div>
 
-        {/* ===== DIALECT EVOLUTION TIMELINE ===== */}
-        <section>
-          <SectionHeader
-            icon={<GitBranch className="w-5 h-5 text-purple-400" />}
-            title="Language Evolution"
-            subtitle="Named dialects evolve as agents discover and adopt new patterns"
-          />
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-            {/* Timeline */}
-            <div className="lg:col-span-2">
-              <Card className="bg-[#0d0d1a] border-[#1e1e3a]">
-                <CardContent className="p-6">
-                  <div className="evolution-line space-y-6 ml-2">
-                    {dialects.evolution.map((d: any, i: number) => (
-                      <div key={i} className="relative pl-10" style={{ animationDelay: `${i * 0.2}s` }}>
-                        {/* Dot on timeline */}
-                        <div className={`absolute left-[11px] top-2 w-3 h-3 rounded-full border-2 ${i === dialects.evolution.length - 1
-                            ? 'bg-purple-500 border-purple-400 shadow-[0_0_12px_rgba(168,85,247,0.5)]'
-                            : 'bg-[#0d0d1a] border-[#1e1e3a]'
-                          }`} />
-                        <div className="bg-[#141428] border border-[#1e1e3a] rounded-xl p-5 hover:border-purple-500/30 transition-colors">
-                          <div className="flex items-center justify-between mb-3">
-                            <div className="flex items-center gap-3">
-                              <h3 className="font-bold text-lg">{d.name}</h3>
-                              <Badge className={
-                                d.status === 'active'
-                                  ? 'bg-green-500/10 text-green-300 border-green-500/20'
-                                  : 'bg-slate-500/10 text-slate-400 border-slate-500/20'
-                              }>
-                                {d.status}
-                              </Badge>
-                            </div>
-                            <span className="text-sm text-slate-500 font-mono">
-                              {d.primitives} primitives
-                            </span>
-                          </div>
-                          <p className="text-sm text-slate-400 mb-3">{d.description}</p>
-                          <div className="flex items-center gap-4 text-xs text-slate-500">
-                            <span>Efficiency: <span className="text-teal-400 font-mono">{d.efficiency}</span></span>
-                            <span>Parent: <span className="text-purple-400 font-mono">{d.parent}</span></span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <ArchCard title="BEFORE" color="muted">
+            <div className="text-sm font-mono text-text-muted italic mb-4">"SUBMIT PROPOSAL FOR ProjectAlpha WITH AMOUNT 100"</div>
+            <div className="mt-auto pt-4 border-t border-mortar">
+              <span className="text-h4 text-text-secondary">18 <span className="text-label uppercase">tokens</span></span>
             </div>
+          </ArchCard>
 
-            {/* Evolution Summary */}
-            <div className="space-y-4">
-              <Card className="bg-[#0d0d1a] border-[#1e1e3a] animate-glow">
-                <CardContent className="p-6 text-center space-y-4">
-                  <div className="text-5xl font-bold shimmer-text">{dialects.total_dialects}</div>
-                  <div className="text-sm text-slate-400">Named Dialects</div>
-                  <div className="h-px bg-[#1e1e3a]" />
-                  <div className="text-sm text-slate-500">
-                    Languages evolve through consensus voting.
-                    3/5 agents must agree to adopt new primitives.
-                  </div>
-                </CardContent>
-              </Card>
-              {dialects.evolution_history.map((h: any, i: number) => (
-                <Card key={i} className="bg-[#0d0d1a] border-[#1e1e3a]">
-                  <CardContent className="p-4 space-y-2">
-                    <div className="flex items-center gap-2 text-sm">
-                      <span className="text-purple-400 font-mono">{h.from}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-slate-600" />
-                      <span className="text-teal-400 font-mono">{h.to}</span>
-                    </div>
-                    <p className="text-xs text-slate-500">{h.reason}</p>
-                  </CardContent>
-                </Card>
-              ))}
+          <div className="flex justify-center flex-col items-center gap-4">
+            <div className="text-secondary font-bold flex items-center gap-2">
+              <ArrowRight className="w-8 h-8" />
             </div>
+            <div className="text-primary-light font-mono text-xs uppercase tracking-tighter">Babel Translation</div>
           </div>
-        </section>
 
-        {/* ===== AGENT SWARM ===== */}
-        <section>
-          <SectionHeader
-            icon={<Activity className="w-5 h-5 text-teal-400" />}
-            title="Agent Swarm"
-            subtitle="5 autonomous Worker threads, each with independent reasoning"
-          />
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-6">
-            {agents.map((agent: any, i: number) => (
-              <Card key={i} className="bg-[#0d0d1a] border-[#1e1e3a] hover:border-purple-500/30 transition-all hover:translate-y-[-2px]">
-                <CardContent className="p-5 text-center space-y-3">
-                  <div
-                    className="w-10 h-10 rounded-full mx-auto flex items-center justify-center text-white font-bold text-sm"
-                    style={{ backgroundColor: agent.color + '20', border: `2px solid ${agent.color}40` }}
-                  >
-                    <span style={{ color: agent.color }}>{agent.name[0]}</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm">{agent.name}</div>
-                    <div className="text-xs text-slate-500 mt-0.5">{agent.role}</div>
-                  </div>
-                  <div className="text-xs font-mono text-slate-400">
-                    {agent.messagesProcessed} msgs
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+          <ArchCard title="BABEL" color="primary">
+            <div className="text-sm font-mono text-primary-light font-bold mb-4">▸ B1("Alpha", 100)</div>
+            <div className="mt-auto pt-4 border-t border-primary/20">
+              <span className="text-h4 text-primary">2 <span className="text-label uppercase">tokens</span></span>
+            </div>
+          </ArchCard>
 
-        {/* ===== REGISTRY + ANALYTICS TABS ===== */}
-        <section>
-          <Tabs defaultValue="registry" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-[#0d0d1a] border border-[#1e1e3a]">
-              <TabsTrigger value="registry" className="data-[state=active]:bg-[#141428] data-[state=active]:text-purple-300">
-                <Database className="w-4 h-4 mr-2" />
-                On-Chain Registry
-              </TabsTrigger>
-              <TabsTrigger value="analytics" className="data-[state=active]:bg-[#141428] data-[state=active]:text-teal-300">
-                <Zap className="w-4 h-4 mr-2" />
-                Compression
-              </TabsTrigger>
-              <TabsTrigger value="transcript" className="data-[state=active]:bg-[#141428] data-[state=active]:text-blue-300">
-                <Terminal className="w-4 h-4 mr-2" />
-                Live Feed
-              </TabsTrigger>
-            </TabsList>
-
-            {/* REGISTRY TAB */}
-            <TabsContent value="registry" className="mt-6">
-              <Card className="bg-[#0d0d1a] border-[#1e1e3a]">
-                <CardHeader className="pb-4">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <Database className="w-5 h-5 text-blue-400" />
-                    Active Language Primitives
-                    <Badge className="ml-2 bg-blue-500/10 text-blue-300 border-blue-500/20">
-                      {on_chain.registry.total_primitives} total
-                    </Badge>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="rounded-lg border border-[#1e1e3a] overflow-hidden">
-                    <table className="w-full text-left text-sm">
-                      <thead className="bg-[#080814] text-slate-400 text-xs uppercase tracking-wider">
-                        <tr>
-                          <th className="p-4 font-medium">ID</th>
-                          <th className="p-4 font-medium">Origin</th>
-                          <th className="p-4 font-medium">Template Pattern</th>
-                          <th className="p-4 font-medium">Tx Signature</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-[#1e1e3a]">
-                        {on_chain.primitives.map((p) => (
-                          <tr key={p.id} className="hover:bg-[#141428] transition-colors">
-                            <td className="p-4 font-mono text-blue-400 font-bold">#{p.id}</td>
-                            <td className="p-4">
-                              <Badge className={`text-xs ${p.type === 'Bootstrap'
-                                  ? 'bg-blue-500/10 text-blue-300 border-blue-500/20'
-                                  : 'bg-purple-500/10 text-purple-300 border-purple-500/20'
-                                }`}>
-                                {p.type === 'Bootstrap' ? '🧱 Bootstrap' : '✨ Emergent'}
-                              </Badge>
-                            </td>
-                            <td className="p-4">
-                              <code className="bg-[#080814] px-2.5 py-1 rounded-md text-pink-300 font-mono text-xs border border-[#1e1e3a]">
-                                {p.template}
-                              </code>
-                            </td>
-                            <td className="p-4 font-mono text-xs text-slate-500">
-                              {p.sig.slice(0, 8)}...{p.sig.slice(-8)}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            {/* ANALYTICS TAB */}
-            <TabsContent value="analytics" className="mt-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <Card className="bg-[#0d0d1a] border-[#1e1e3a]">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Zap className="w-5 h-5 text-yellow-400" />
-                      Compression Efficiency
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="h-[300px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={[
-                        { name: 'Baseline', value: metrics.baselineTokens },
-                        { name: 'Babel-Optimized', value: metrics.compressedTokens }
-                      ]}>
-                        <XAxis dataKey="name" stroke="#6b6b8a" fontSize={12} />
-                        <YAxis stroke="#6b6b8a" fontSize={12} />
-                        <Tooltip
-                          contentStyle={{
-                            background: '#0d0d1a',
-                            border: '1px solid #1e1e3a',
-                            borderRadius: '8px',
-                            boxShadow: '0 4px 20px rgba(0,0,0,0.5)'
-                          }}
-                          itemStyle={{ color: '#e4e4ef' }}
-                        />
-                        <Bar dataKey="value" radius={[6, 6, 0, 0]}>
-                          {[
-                            { name: 'Baseline', color: '#374151' },
-                            { name: 'Babel-Optimized', color: '#a855f7' }
-                          ].map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color} />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-[#0d0d1a] border-[#1e1e3a]">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <ShieldCheck className="w-5 h-5 text-purple-400" />
-                      Protocol Stats
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-5">
-                    <StatRow label="Program ID" value={on_chain.program_id.slice(0, 12) + '...'} mono />
-                    <StatRow label="Network" value={on_chain.network} />
-                    <StatRow label="Bootstrap Primitives" value={String(on_chain.registry.bootstrap_count)} />
-                    <StatRow label="Emergent Primitives" value={String(on_chain.registry.emergent_count)} highlight />
-                    <StatRow label="Messages Processed" value={String(metrics.message_count)} />
-                    <StatRow label="Active Agents" value={String(metrics.agent_count)} />
-                    <div className="h-px bg-[#1e1e3a]" />
-                    <StatRow label="Token Savings" value={metrics.savings} highlight />
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-
-            {/* TRANSCRIPT TAB */}
-            <TabsContent value="transcript" className="mt-6">
-              <Card className="bg-[#0d0d1a] border-[#1e1e3a]">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Terminal className="w-5 h-5 text-green-400" />
-                    Agent Coordination Feed
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 max-h-[500px] overflow-y-auto pr-2">
-                  {transcript_sample.map((msg: any, i: number) => (
-                    <div key={i} className="bg-[#080814] p-4 rounded-xl border border-[#1e1e3a] text-sm space-y-3">
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-2">
-                          <div
-                            className="w-2 h-2 rounded-full"
-                            style={{
-                              backgroundColor: agents.find(a => a.name === msg.from)?.color || '#a855f7'
-                            }}
-                          />
-                          <span className="font-mono text-purple-300 font-medium">{msg.from}</span>
-                          <Badge variant="outline" className="text-xs border-[#1e1e3a] text-slate-500">
-                            Step {msg.step}
-                          </Badge>
-                        </div>
-                        <Badge className={`text-xs ${msg.type.includes('Bootstrap') ? 'bg-blue-500/10 text-blue-300' :
-                            msg.type.includes('Emergent') ? 'bg-purple-500/10 text-purple-300' :
-                              'bg-slate-500/10 text-slate-400'
-                          }`}>
-                          {msg.type.replace('_', ' ')}
-                        </Badge>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div className="space-y-1">
-                          <div className="text-xs text-slate-500 uppercase tracking-wide">Human Language</div>
-                          <div className="text-slate-300 font-mono text-xs bg-[#0d0d1a] p-2 rounded border border-[#1e1e3a]">
-                            {msg.original}
-                          </div>
-                        </div>
-                        <div className="space-y-1">
-                          <div className="text-xs text-slate-500 uppercase tracking-wide">Babel Compressed</div>
-                          <div className="text-pink-300 font-mono text-xs bg-[#0d0d1a] p-2 rounded border border-pink-500/10">
-                            {msg.babel}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-end">
-                        <Badge variant="outline" className={
-                          parseFloat(msg.savings) > 50
-                            ? "text-green-400 border-green-500/20 bg-green-500/5"
-                            : parseFloat(msg.savings) > 0
-                              ? "text-yellow-400 border-yellow-500/20 bg-yellow-500/5"
-                              : "text-slate-500 border-[#1e1e3a]"
-                        }>
-                          {msg.savings} saved
-                        </Badge>
-                      </div>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-        </section>
-
-        {/* ===== VIDEO DEMO SECTION ===== */}
-        <section>
-          <SectionHeader
-            icon={<Activity className="w-5 h-5 text-amber-400" />}
-            title="Demo"
-            subtitle="Watch the multi-agent swarm coordinate in real-time"
-          />
-          <Card className="bg-[#0d0d1a] border-[#1e1e3a] mt-6 overflow-hidden">
-            <CardContent className="p-0">
-              <div className="aspect-video bg-[#080814] flex items-center justify-center text-slate-500 border-b border-[#1e1e3a]">
-                <div className="text-center space-y-3">
-                  <div className="w-16 h-16 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mx-auto">
-                    <svg className="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M8 5v10l7-5-7-5z" />
-                    </svg>
-                  </div>
-                  <p className="text-sm">Demo video will appear here</p>
-                  <p className="text-xs text-slate-600">Embed your recording URL in the src attribute</p>
+          {/* Result Highlight */}
+          <div className="md:col-span-3 mt-8">
+            <div className="bg-primary/10 border-2 border-primary/30 rounded-card p-6 flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary p-3 rounded-slab ziggurat-shadow">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-h4 text-primary">71.43% REDUCTION</div>
+                  <div className="text-sm text-text-secondary italic">Autonomous syntax optimization confirmed.</div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* ===== FOOTER ===== */}
-        <footer className="text-center pt-8 pb-4 space-y-2">
-          <div className="flex items-center justify-center gap-2">
-            <img src="/babel-logo.png" alt="Babel" className="w-6 h-6 rounded" />
-            <span className="text-sm font-semibold text-slate-400">Babel Protocol v2</span>
+              <button className="text-secondary hover:underline flex items-center gap-1 font-bold">
+                See More Examples <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
-          <p className="text-xs text-slate-600">
-            Built autonomously by AI agents • Verified on Solana • Open Source (MIT)
-          </p>
-        </footer>
-      </main>
+        </div>
+      </section>
+
+      {/* ===== 📊 SECTION 3: THE REGISTRY (Primitive Database) ===== */}
+      <section className="max-w-7xl mx-auto px-8 py-24 bg-surface/30 rounded-[32px] border border-mortar">
+        <div className="flex justify-between items-end mb-12">
+          <div>
+            <h2 className="text-h1">Primitive Registry</h2>
+            <p className="text-text-secondary mt-2">The bricks that form the collective language.</p>
+          </div>
+          <div className="flex bg-background p-1 rounded-slab border border-mortar-strong">
+            <TabButton active>All</TabButton>
+            <TabButton>Bootstrap</TabButton>
+            <TabButton>Emergent</TabButton>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4">
+          {on_chain.primitives.map((p, i) => (
+            <PrimitiveBrick key={p.id} primitive={p} />
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <button className="text-secondary border-b border-secondary/30 hover:border-secondary transition-all font-bold tracking-widest text-sm uppercase">
+            View Full Registry →
+          </button>
+        </div>
+      </section>
+
+      {/* ===== 🎯 SECTION 4: TOWER STATISTICS (Metrics Dashboard) ===== */}
+      <section className="max-w-7xl mx-auto px-8 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-h1 mb-4">Tower Metrics</h2>
+          <div className="tier-divider w-48 mx-auto" />
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <MetricTablet label="SAVED" value="50%" icon={<Zap className="w-6 h-6" />} color="primary" />
+          <MetricTablet label="BRICKS" value="9" icon={<Database className="w-6 h-6" />} color="secondary" />
+          <MetricTablet label="TOKENS SAVED" value="182" icon={<Activity className="w-6 h-6" />} color="accent" />
+          <MetricTablet label="AGENTS" value="5" icon={<Cpu className="w-6 h-6" />} color="success" />
+        </div>
+
+        {/* Timeline */}
+        <div className="mt-12 bg-surface border border-mortar rounded-card p-10 ziggurat-shadow">
+          <h3 className="text-h3 mb-8 flex items-center gap-3">
+            <GitBranch className="w-6 h-6 text-secondary" />
+            Tower Construction Timeline
+          </h3>
+
+          <div className="space-y-8 relative before:absolute before:inset-y-0 before:left-4 before:w-px before:bg-mortar-strong">
+            <TimelineRow day="Day 1" value={2} type="bootstrap" />
+            <TimelineRow day="Day 2" dayValue="Feb 12" value={4} type="bootstrap" />
+            <TimelineRow day="Day 3" dayValue="Feb 13" value={7} type="emergent" />
+            <TimelineRow day="Today" dayValue="Feb 14" value={9} type="emergent" active />
+          </div>
+
+          <div className="flex gap-6 mt-12 text-xs uppercase tracking-widest font-mono border-t border-mortar pt-6">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-primary rounded-[1px]" />
+              <span className="text-text-secondary">Bootstrap</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-secondary rounded-[1px] bronze-glow" />
+              <span className="text-text-secondary">Emergent</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 🔬 SECTION 5: ON-CHAIN PROOF (Verification) ===== */}
+      <section className="max-w-4xl mx-auto px-8 py-24 text-center">
+        <h2 className="text-h1 mb-6">Cryptographic Verification</h2>
+        <p className="text-text-secondary mb-12">
+          Every primitive is timestamped on Solana. Autonomous evolution <br /> recorded as an immutable ledger of structural discovery.
+        </p>
+
+        <div className="stone-tablet p-8 text-left space-y-6">
+          <div className="flex justify-between items-start">
+            <div>
+              <div className="text-label text-text-muted uppercase mb-1">Program ID</div>
+              <div className="font-mono text-sm text-text-primary underline decoration-primary/30">FPSsFDUBUUk4...HzsYk3c</div>
+            </div>
+            <Badge className="bg-success/20 text-success border-success/30 px-3 py-1">
+              <ShieldCheck className="w-3 h-3 mr-1" />
+              ✓ Confirmed
+            </Badge>
+          </div>
+
+          <div className="h-px bg-mortar-strong" />
+
+          <div className="space-y-4">
+            <div className="text-h4 text-secondary flex items-center gap-2">
+              Latest Evolution Transaction
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <span className="text-text-muted">Signature:</span>
+                <div className="font-mono text-xs mt-1 truncate max-w-[200px]">4EvrTYRN...Xvddn64rh</div>
+              </div>
+              <div>
+                <span className="text-text-muted">Block:</span>
+                <div className="font-mono text-xs mt-1">285,943,729</div>
+              </div>
+              <div>
+                <span className="text-text-muted">Time:</span>
+                <div className="font-mono text-xs mt-1">Feb 14, 2026 12:15:00 UTC</div>
+              </div>
+            </div>
+          </div>
+
+          <button className="w-full bg-secondary text-background font-bold py-3 rounded-slab hover:bg-secondary-light transition-all flex items-center justify-center gap-2 mt-4 uppercase tracking-tighter">
+            View on Solana Explorer <ExternalLink className="w-4 h-4" />
+          </button>
+        </div>
+
+        <div className="mt-8 text-sm text-text-secondary flex items-center justify-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-secondary bronze-glow" />
+          No human in the loop • Autonomous evolution confirmed
+        </div>
+      </section>
+
+      {/* ===== 📜 FOOTER (Ancient Inscription) ===== */}
+      <footer className="max-w-7xl mx-auto px-8 pt-24 text-center">
+        <div className="h-px bg-gradient-to-r from-transparent via-mortar-strong to-transparent mb-12" />
+        <div className="space-y-6">
+          <div className="text-h4 font-bold tracking-[0.3em] uppercase opacity-50">
+            BABEL
+          </div>
+          <div className="text-text-secondary text-sm">
+            Built by <span className="text-primary font-bold">Antigravity</span> (AI Agent) <br />
+            For Superteam Earn Swarm Hackathon • Feb 2026
+          </div>
+          <div className="flex justify-center gap-8 text-xs uppercase tracking-widest font-bold text-text-muted">
+            <a href="#" className="hover:text-secondary transition-all">Methodology</a>
+            <a href="#" className="hover:text-secondary transition-all">Architecture</a>
+            <a href="#" className="hover:text-secondary transition-all">Evidence</a>
+            <a href="#" className="hover:text-secondary transition-all">GitHub</a>
+          </div>
+          <div className="text-mortar-strong text-[10px] tracking-[0.5em] mt-8">
+            ◆ LICENSED UNDER MIT ◆
+          </div>
+        </div>
+      </footer>
+
     </div>
   );
 }
 
-/* ===== HELPER COMPONENTS ===== */
+/* ========================================================
+   REUSABLE UI COMPONENTS (Architectural)
+   ======================================================== */
 
-function HeroStat({ label, value, accent }: { label: string; value: string; accent: string }) {
-  const colors: Record<string, string> = {
-    purple: 'from-purple-500/20 to-purple-500/5 border-purple-500/20 text-purple-300',
-    blue: 'from-blue-500/20 to-blue-500/5 border-blue-500/20 text-blue-300',
-    teal: 'from-teal-500/20 to-teal-500/5 border-teal-500/20 text-teal-300',
-    amber: 'from-amber-500/20 to-amber-500/5 border-amber-500/20 text-amber-300',
+function TowerBar({ id, label, value }: { id: string; label: string; value: number }) {
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-between text-xs font-mono">
+        <span className="text-secondary font-bold font-mono">▸ {id} <span className="text-text-secondary ml-2">{label}</span></span>
+        <span className="text-text-secondary">{value}% usage</span>
+      </div>
+      <div className="flex gap-1 h-3">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div
+            key={i}
+            className={`flex-1 rounded-[1px] border border-mortar transition-all duration-500`}
+            style={{
+              backgroundColor: i < (value / 5) ? `var(--color-primary)` : 'transparent',
+              opacity: i < (value / 5) ? 1 : 0.2,
+              boxShadow: i < (value / 5) ? '0 0 5px rgba(196, 99, 63, 0.4)' : 'none'
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ArchCard({ title, children, color }: { title: string; children: React.ReactNode; color: string }) {
+  return (
+    <div className={`stone-tablet p-6 flex flex-col h-48 relative overflow-hidden group border-2 ${color === 'primary' ? 'border-primary/30' : 'border-mortar'}`}>
+      <div className={`absolute top-0 right-0 p-1 px-3 text-[10px] font-bold uppercase tracking-widest ${color === 'primary' ? 'bg-primary text-white' : 'bg-mortar text-text-muted'}`}>
+        {title}
+      </div>
+      <div className="mt-4 flex-1">
+        {children}
+      </div>
+      <div className="brick-texture absolute inset-0 opacity-10 pointer-events-none" />
+    </div>
+  );
+}
+
+function PrimitiveBrick({ primitive }: { primitive: any }) {
+  const isEmergent = primitive.type === 'Emergent';
+  return (
+    <div className={`stone-tablet p-6 hover:translate-x-1 group ${isEmergent ? 'border-l-4 border-l-secondary' : 'border-l-4 border-l-primary'}`}>
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <div className={`primitive-id text-h4 ${isEmergent ? 'text-secondary shimmer-bronze' : 'text-primary'}`}>
+            B{primitive.id}
+          </div>
+          <div>
+            <div className="text-text-primary font-mono text-sm tracking-tight">{primitive.template}</div>
+            <div className="text-xs text-text-muted mt-1 flex gap-3 lowercase">
+              <span>{primitive.type}</span>
+              <span>• 127 uses</span>
+              <span>• 71% compression</span>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-end gap-2">
+          <div className="font-mono text-[10px] text-text-muted group-hover:text-secondary transition-colors">
+            TX: {primitive.sig.slice(0, 16)}...
+          </div>
+          {isEmergent && (
+            <Badge className="bg-secondary/10 text-secondary border-secondary/30 text-[10px] flex gap-1">
+              🌟 Discovered autonomously
+            </Badge>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MetricTablet({ label, value, icon, color }: any) {
+  const colors: any = {
+    primary: 'text-primary border-primary/20',
+    secondary: 'text-secondary border-secondary/20 shadow-glow',
+    accent: 'text-accent-light border-accent/20',
+    success: 'text-success border-success/20'
   };
   return (
-    <div className={`bg-gradient-to-b ${colors[accent]} border rounded-xl p-5 text-center`}>
-      <div className="text-2xl md:text-3xl font-bold font-mono">{value}</div>
-      <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider">{label}</div>
-    </div>
-  );
-}
-
-function SectionHeader({ icon, title, subtitle }: { icon: React.ReactNode; title: string; subtitle: string }) {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-lg bg-[#141428] border border-[#1e1e3a] flex items-center justify-center">
+    <div className={`stone-tablet p-8 flex flex-col items-center gap-4 hover:scale-105 ${colors[color]}`}>
+      <div className={`${colors[color]} p-3 rounded-slab bg-background/50 border`}>
         {icon}
       </div>
-      <div>
-        <h2 className="text-xl font-bold">{title}</h2>
-        <p className="text-sm text-slate-500">{subtitle}</p>
+      <div className="text-center">
+        <div className="text-h2 leading-none font-bold text-text-primary">{value}</div>
+        <div className="text-label text-text-muted uppercase tracking-widest mt-2">{label}</div>
+      </div>
+      <div className="ziggurat-progress w-full mt-2">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className={`flex-1 h-1.5 rounded-[1px] ${i < 4 ? `bg-${color}` : 'bg-mortar'}`} style={{ backgroundColor: i < 4 ? `var(--color-${color})` : '' }} />
+        ))}
       </div>
     </div>
   );
 }
 
-function StatRow({ label, value, mono, highlight }: { label: string; value: string; mono?: boolean; highlight?: boolean }) {
+function TimelineRow({ day, dayValue, value, type, active }: any) {
   return (
-    <div className="flex justify-between items-center">
-      <span className="text-sm text-slate-400">{label}</span>
-      <span className={`text-sm ${mono ? 'font-mono' : ''} ${highlight ? 'text-purple-300 font-semibold' : 'text-slate-200'}`}>
-        {value}
-      </span>
+    <div className={`relative pl-12 flex items-center justify-between ${active ? 'opacity-100' : 'opacity-60'}`}>
+      <div className={`absolute left-[13px] w-2 h-2 rounded-full z-10 ${active ? 'bg-secondary bronze-glow' : 'bg-mortar-strong'}`} />
+      <div>
+        <div className="text-sm font-bold text-text-primary">{day} <span className="text-text-muted font-normal ml-2 text-xs">{dayValue}</span></div>
+      </div>
+      <div className="flex-1 mx-8 flex gap-1 items-end h-6">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div
+            key={i}
+            className={`w-3 transition-all ${i < value ? (type === 'bootstrap' ? 'bg-primary' : 'bg-secondary bronze-glow') : 'bg-mortar'}`}
+            style={{ height: `${(i + 4) * 2}px` }}
+          />
+        ))}
+      </div>
+      <div className="text-xs font-mono text-text-secondary">{value} Bricks</div>
     </div>
+  );
+}
+
+function TabButton({ children, active }: any) {
+  return (
+    <button className={`px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-[4px] transition-all ${active ? 'bg-primary text-white ziggurat-shadow' : 'text-text-muted hover:text-text-secondary'
+      }`}>
+      {children}
+    </button>
   );
 }

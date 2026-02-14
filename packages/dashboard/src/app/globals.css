@@ -1,58 +1,108 @@
 @import "tailwindcss";
 
-:root {
-  --background: #06060e;
-  --foreground: #e4e4ef;
-  --accent-purple: #a855f7;
-  --accent-blue: #3b82f6;
-  --accent-teal: #14b8a6;
-  --accent-amber: #f59e0b;
-  --surface: #0d0d1a;
-  --surface-hover: #141428;
-  --border: #1e1e3a;
-  --muted: #6b6b8a;
+@theme {
+  /* Tower of Babel Palette */
+  --color-primary: #C4633F;
+  /* Burnt terracotta */
+  --color-primary-light: #D47B5A;
+  /* Sun-baked clay */
+  --color-primary-dark: #A04E2F;
+  /* Shadow clay */
+
+  --color-secondary: #CD9933;
+  /* Mesopotamian bronze */
+  --color-secondary-light: #E5B75F;
+  /* Polished gold */
+
+  --color-accent: #2C5F99;
+  /* Deep lapis blue */
+  --color-accent-light: #3D7ABB;
+  /* Sky reflection */
+
+  --color-background: #1A1510;
+  /* Dark stone/night desert */
+  --color-surface: #2A231D;
+  /* Lighter stone slab */
+  --color-surface-elevated: #352D26;
+  /* Raised platform */
+
+  --color-text-primary: #F5EFE7;
+  /* Limestone/papyrus */
+  --color-text-secondary: #B8A996;
+  /* Aged papyrus */
+  --color-text-muted: #7A6F5E;
+  /* Worn stone inscription */
+
+  --color-mortar: #3D352C;
+  /* Mortar between bricks */
+  --color-mortar-strong: #5A4D3F;
+  /* Defined edges */
+
+  --color-success: #6B9F3E;
+  /* Fertile crescent green */
+  --color-warning: #D69F34;
+  /* Desert sun warning */
+  --color-error: #B8443B;
+  /* Red clay */
+
+  --font-sans: var(--font-lexend), system-ui, sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
+  /* Shadows */
+  --shadow-ziggurat: 0 4px 0 0 rgba(61, 53, 44, 0.5);
+  --shadow-glow: 0 0 20px rgba(205, 153, 51, 0.3);
+
+  /* Border Radii */
+  --radius-brick: 2px;
+  --radius-slab: 8px;
+  --radius-card: 12px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains);
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #1e1e3a transparent;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-}
-
-/* Tower building block animation */
-@keyframes float-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px) scale(0.9);
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-mortar-strong) transparent;
   }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
   }
 }
 
-@keyframes glow-pulse {
-
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+@layer utilities {
+  .brick-texture {
+    background-image:
+      repeating-linear-gradient(90deg,
+        rgba(196, 99, 63, 0.03) 0px,
+        rgba(196, 99, 63, 0.03) 1px,
+        transparent 1px,
+        transparent 16px),
+      repeating-linear-gradient(0deg,
+        rgba(196, 99, 63, 0.03) 0px,
+        rgba(196, 99, 63, 0.03) 1px,
+        transparent 1px,
+        transparent 8px);
   }
 
-  50% {
-    box-shadow: 0 0 40px rgba(168, 85, 247, 0.25);
+  .ziggurat-shadow {
+    box-shadow: var(--shadow-ziggurat);
+  }
+
+  .bronze-glow {
+    filter: drop-shadow(0 0 8px rgba(205, 153, 51, 0.4));
+  }
+
+  .shimmer-bronze {
+    background: linear-gradient(90deg,
+        #CD9933 0%,
+        #E5B75F 50%,
+        #CD9933 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
   }
 }
 
@@ -66,76 +116,73 @@ body {
   }
 }
 
-@keyframes tower-build {
-  0% {
-    height: 0%;
-    opacity: 0;
-  }
+/* Custom Components from Design Plan */
 
-  100% {
-    height: 100%;
-    opacity: 1;
-  }
+.primitive-id {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  position: relative;
 }
 
-.animate-float-up {
-  animation: float-up 0.6s ease-out forwards;
+.primitive-id::before {
+  content: '▸';
+  color: var(--color-secondary);
+  margin-right: 4px;
 }
 
-.animate-glow {
-  animation: glow-pulse 3s ease-in-out infinite;
-}
-
-.shimmer-text {
+.tier-divider {
+  height: 2px;
   background: linear-gradient(90deg,
-      #a855f7 0%,
-      #3b82f6 25%,
-      #14b8a6 50%,
-      #3b82f6 75%,
-      #a855f7 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 4s linear infinite;
-}
-
-/* Building block grid pattern */
-.tower-grid {
-  background-image:
-    linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Gradient border effect */
-.gradient-border {
+      transparent 0%,
+      var(--color-mortar-strong) 20%,
+      var(--color-mortar-strong) 80%,
+      transparent 100%);
   position: relative;
-  border: 1px solid transparent;
-  background-clip: padding-box;
+  margin: 32px 0;
 }
 
-.gradient-border::before {
-  content: '';
+.tier-divider::before,
+.tier-divider::after {
+  content: '◆';
   position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1));
-  z-index: -1;
-  border-radius: 12px;
+  color: var(--color-secondary);
+  font-size: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-/* Evolution timeline line */
-.evolution-line {
-  position: relative;
-}
-
-.evolution-line::before {
-  content: '';
-  position: absolute;
+.tier-divider::before {
   left: 16px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #a855f7, #3b82f6, #14b8a6);
+}
+
+.tier-divider::after {
+  right: 16px;
+}
+
+.stone-tablet {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-mortar);
+  border-radius: var(--radius-slab);
+  box-shadow: var(--shadow-ziggurat);
+  transition: all 0.2s ease;
+}
+
+.stone-tablet:hover {
+  background-color: var(--color-surface-elevated);
+  transform: translateY(-2px);
+  border-color: var(--color-mortar-strong);
+}
+
+.brick-border {
+  border: 2px solid var(--color-mortar);
+  position: relative;
+}
+
+.brick-border::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid var(--color-mortar-strong);
+  pointer-events: none;
 }
