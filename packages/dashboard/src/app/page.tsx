@@ -59,7 +59,7 @@ export default function Dashboard() {
 
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-8 relative z-10">
           <div>
-            <img src="/babel-logo.png" alt="Babel Ziggurat" className="w-24 h-24 mb-4 bronze-glow mx-auto" />
+            <img src="/babel-logo.png" alt="Babel Ziggurat" className="w-48 h-48 mb-4 bronze-glow mx-auto object-contain" />
             <div className="primitive-id text-secondary text-lg font-bold tracking-[0.2em] mb-2 uppercase">
               Babel Protocol
             </div>
