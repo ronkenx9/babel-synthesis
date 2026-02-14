@@ -1,7 +1,7 @@
 {
-  "protocol": "Babel",
-  "version": "1.1.0",
-  "methodology": "Bootstrap + Emergent Discovery",
+  "protocol": "Babel Protocol v2",
+  "version": "2.0.0",
+  "methodology": "Multi-Agent Consensus with Dialect Evolution",
   "on_chain": {
     "program_id": "FPSsFDUBUUk4noLmg2TvCgjrf9suQsbCtCd8QHzsYk3c",
     "network": "Solana Local (Agave 3.0.15)",
@@ -68,29 +68,114 @@
     ]
   },
   "metrics": {
-    "baselineTokens": 364,
-    "compressedTokens": 182,
-    "savings": "50.00%",
+    "baselineTokens": 265,
+    "compressedTokens": 135,
+    "savings": "49.06%",
     "agent_count": 5,
     "message_count": 50
   },
+  "agents": [
+    {
+      "name": "Architect",
+      "role": "Lead coordinator",
+      "color": "#a855f7",
+      "messagesProcessed": 10
+    },
+    {
+      "name": "Auditor",
+      "role": "Transaction verifier",
+      "color": "#3b82f6",
+      "messagesProcessed": 10
+    },
+    {
+      "name": "Negotiator",
+      "role": "Consensus mediator",
+      "color": "#14b8a6",
+      "messagesProcessed": 10
+    },
+    {
+      "name": "Validator",
+      "role": "Proof checker",
+      "color": "#f59e0b",
+      "messagesProcessed": 10
+    },
+    {
+      "name": "Synthesizer",
+      "role": "Pattern synthesizer",
+      "color": "#ef4444",
+      "messagesProcessed": 10
+    }
+  ],
+  "dialects": {
+    "total_dialects": 2,
+    "active_dialects": 2,
+    "evolution": [
+      {
+        "name": "Babel-Alpha v1",
+        "primitives": 3,
+        "efficiency": "50.0%",
+        "parent": "genesis",
+        "status": "active",
+        "description": "Bootstrap language — foundational primitives seeded at initialization"
+      },
+      {
+        "name": "Babel-Alpha v2",
+        "primitives": 5,
+        "efficiency": "49.1%",
+        "parent": "Babel-Alpha v1",
+        "status": "active",
+        "description": "First evolution — 2 emergent patterns adopted via 5/5 consensus"
+      }
+    ],
+    "evolution_history": [
+      {
+        "from": "Babel-Alpha v1",
+        "to": "Babel-Alpha v2",
+        "reason": "Added 2 emergent patterns via consensus"
+      }
+    ]
+  },
   "transcript_sample": [
     {
-      "step": 6,
-      "from": "Coordinator",
-      "original": "SUBMIT PROPOSAL FOR ProjectBeta WITH AMOUNT 250",
-      "babel": "B1(ProjectBeta, 250)",
+      "step": 1,
+      "from": "Architect",
+      "original": "SUBMIT PROPOSAL FOR ProjectAlpha WITH AMOUNT 100",
+      "babel": "B1(ProjectAlpha, 100)",
       "savings": "71.43%",
       "type": "Bootstrap_Compressed"
     },
     {
-      "step": 51,
+      "step": 2,
       "from": "Auditor",
-      "original": "AUDIT LOGS FOR TRANSACTION TX-DONE-123",
-      "babel": "B599(TX-DONE-123)",
+      "original": "REQUEST REVIEW FOR TASK-123-ABC",
+      "babel": "B2(TASK-123-ABC)",
       "savings": "75.00%",
-      "type": "Emergent_Compressed"
+      "type": "Bootstrap_Compressed"
+    },
+    {
+      "step": 3,
+      "from": "Negotiator",
+      "original": "VALIDATE PROOF OF WORK AT 5fG7h9j2kL8m",
+      "babel": "B3(5fG7h9j2kL8m)",
+      "savings": "83.33%",
+      "type": "Bootstrap_Compressed"
+    },
+    {
+      "step": 4,
+      "from": "Validator",
+      "original": "AUDIT LOGS FOR TRANSACTION TX-999-RE",
+      "babel": "AUDIT LOGS FOR TRANSACTION TX-999-RE",
+      "savings": "0.00%",
+      "type": "Uncompressed"
+    },
+    {
+      "step": 6,
+      "from": "Architect",
+      "original": "SUBMIT PROPOSAL FOR ProjectBeta WITH AMOUNT 250",
+      "babel": "B1(ProjectBeta, 250)",
+      "savings": "71.43%",
+      "type": "Bootstrap_Compressed"
     }
   ],
-  "timestamp": "2026-02-10T23:59:00.000Z"
+  "timestamp": "2026-02-14T12:15:00.000Z"
 }

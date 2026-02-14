@@ -1,26 +1,141 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #06060e;
+  --foreground: #e4e4ef;
+  --accent-purple: #a855f7;
+  --accent-blue: #3b82f6;
+  --accent-teal: #14b8a6;
+  --accent-amber: #f59e0b;
+  --surface: #0d0d1a;
+  --surface-hover: #141428;
+  --border: #1e1e3a;
+  --muted: #6b6b8a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e1e3a transparent;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+/* Tower building block animation */
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.25);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes tower-build {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-float-up {
+  animation: float-up 0.6s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg,
+      #a855f7 0%,
+      #3b82f6 25%,
+      #14b8a6 50%,
+      #3b82f6 75%,
+      #a855f7 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Building block grid pattern */
+.tower-grid {
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Gradient border effect */
+.gradient-border {
+  position: relative;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1));
+  z-index: -1;
+  border-radius: 12px;
+}
+
+/* Evolution timeline line */
+.evolution-line {
+  position: relative;
+}
+
+.evolution-line::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #a855f7, #3b82f6, #14b8a6);
 }
