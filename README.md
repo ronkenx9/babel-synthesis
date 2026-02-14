@@ -1,51 +1,65 @@
-# The Babel Protocol: Self-Evolving Agent Coordination
+# Babel Protocol — Autonomous Language Evolution on Solana
 
-**Babel** is an on-chain coordination protocol built for the Solana network. It enables AI agents to autonomously discover, negotiate, and register high-frequency linguistic patterns (primitives) for ultra-efficient communication.
+![Babel Logo](packages/dashboard/public/babel-logo.png)
 
-## 🚀 Impact: 50% Token Savings
-In our multi-agent coordination benchmark, Babel achieved a **50.00% reduction** in token overhead by replacing repetitive natural language structures with on-chain primitives.
+> **"Built autonomously by AI agents for the Solana AI Hackathon."**
 
-- **Baseline Overhead:** 364.00 Tokens
-- **Babel Optimized:** 182.00 Tokens
-- **Emergent Patterns Registered:** 6
+Babel Protocol is an experimental system where five autonomous agents (The Swarm) invent, negotiate, and evolve their own on-chain coordination language. By bypassing human linguistic constraints, the protocol achieves **~50% reduction in coordination overhead** while maintaining full traceability on the Solana blockchain.
 
-## 🧠 How it Works
+## 🚀 The v2 Upgrade: Swarm & Dialects
 
-The Babel Protocol follows a **Two-Phase Evolution** model:
+The protocol has evolved from a simple simulation into a **Real-Time Multi-Agent Swarm**:
 
-1. **Phase 1: Bootstrap (Verification Ready)**  
-   To demonstrate the compression mechanism immediately, 3 high-frequency "Bootstrap" patterns are pre-registered on-chain (e.g., `SUBMIT_PROPOSAL`).
-2. **Phase 2: Autonomous Emergence**  
-   The system continuously analyzes communication transcripts. In our benchmark, Babel autonomously discovered and registered **6 additional patterns** (e.g., `AUDIT_LOGS`) that exceeded the utility threshold.
-3. **Phase 3: Dialect Converge**  
-   Once registered, all agents update their local encoders and seamlessly transition to the new, more efficient dialect.
+- **Autonomous Swarm:** 5 independent worker threads (Architect, Auditor, Negotiator, Validator, Synthesizer) with distinct reasoning roles.
+- **Consensus Voting:** No language pattern is adopted without a 3/5 majority vote from the swarm.
+- **Dialect Evolution:** Languages are named (e.g., *Babel-Alpha*), versioned, and tracked over time as the swarm optimizes.
+- **On-Chain Registry:** Every discovered primitive is registered as a permanent account on the Solana registry program.
 
-## Chain of Truth
-All patterns—both bootstrap and emergent—are verifiable on the Solana ledger.
-- **Bootstrap Primitives:** 3
-- **Emergent Primitives:** 6
-- **Total Registered:** 9
+## 🏛️ Project Structure
 
-## 🛠️ Project Structure
-- `/babel-registry`: Anchor program (Solana) for on-chain pattern management.
-- `/.openclaw/skills/babel`: OpenClaw skill implementing the autonomous discovery and compression logic.
-- `run-demo.ts`: Scaled coordination benchmark (50 messages, 5 agent roles).
+- `babel-registry/`: Anchor program (Rust) for on-chain primitive registration.
+- `src/`: Core logic for the Swarm Orchestrator, Agent Workers, and Dialect Registry.
+- `packages/dashboard/`: A premium Next.js dashboard visualizing the evolution in real-time.
+- `run-demo-v2.ts`: The main entry point to spawn the swarm and initiate evolution.
 
-## ⛓️ On-Chain Proof
-- **Program ID:** `FPSsFDUBUUk4noLmg2TvCgjrf9suQsbCtCd8QHzsYk3c`
-- **Latest Evolution Signature:** `4EvrTYRNWoNrvowghfpJqyhJ87pequvNHxm48x6GdVdZH3YVcZnmM6S5QCxPcJMZcpWwdmDjqd3ZaCStXvDn64rh`
+## 📊 Live Dashboard
+[View the Dashboard on Vercel](https://babel-synthesis.vercel.app)
 
-## 🏃 Setup & Demo
-1. **Start Local Validator** (WSL): `./start_validator.sh`
-2. **Deploy Program**: `cd babel-registry && anchor deploy`
-3. **Run Benchmark**: `npx ts-node run-demo.ts`
-4. **View Dashboard**: Open `dashboard.html` to see the visualized registry evolution.
+## 🛠️ Reproduction Instructions
 
-## 📚 Documentation Suite
-- [**Reproducibility Guide**](./REPRODUCIBILITY.md): Run the protocol in 5 minutes.
-- [**Autonomy Log**](./AUTONOMY_LOG.md): Step-by-step account of agent decisions.
-- [**Architecture**](./ARCHITECTURE.md): Deep dive into the compression engine.
-- [**Research Paper**](./RESEARCH_PAPER.md): Agent-authored academic synthesis.
+### 1. Prerequisites
+- Solana CLI & Agave 3.0.15
+- Anchor CLI 0.29.0
+- Node.js v22+
+
+### 2. Setup Validator
+```bash
+solana-test-validator --reset
+```
+
+### 3. Deploy & Initialize
+```bash
+# Build and deploy the registry program
+cd babel-registry && anchor build && anchor deploy
+
+# Initialize the registry account
+cd .. && node --experimental-strip-types init-registry.ts
+```
+
+### 4. Run the Swarm Demo
+```bash
+node --experimental-strip-types run-demo-v2.ts
+```
+
+## 🔍 How Solana is Used
+Solana provides the **immutable proof of evolution**. 
+- Each language primitive is a unique PDA (Program Derived Address).
+- The registry tracks proposer stats and primitive metadata.
+- Every "Dialect Upgrade" is backed by the verifiable registration of new primitives.
+
+## 🤖 Agent Autonomy Disclosure
+This entire project — from the v2 Swarm architecture and consensus logic to the Tower of Babel dashboard theme — was planned, implemented, and verified by an AI agent (Antigravity). Human involvement was limited to high-level vision and requirement approval.
 
 ---
-*Built for Superteam Earn by Antigravity (Agent).*
+**License:** MIT
+**GitHub:** [ronkenx9/babel-synthesis](https://github.com/ronkenx9/babel-synthesis)
