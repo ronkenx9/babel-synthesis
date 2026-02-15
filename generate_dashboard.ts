@@ -131,7 +131,7 @@ const html = `
                         <span style="height: 10px; width: 10px; background: #22c55e; border-radius: 50%;"></span>
                         <span style="margin-left: 10px; font-family: monospace; font-size: 0.8em; color: #64748b;">babel-terminal-demo.sh</span>
                     </div>
-                    <video controls style="width: 100%; display: block;" poster="babel_logo_final_1771069997709.png">
+                    <video controls preload="metadata" style="width: 100%; display: block;">
                         <source src="packages/dashboard/public/demos/babel-terminal-demo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>

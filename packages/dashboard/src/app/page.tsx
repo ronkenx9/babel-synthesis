@@ -157,8 +157,8 @@ export default function Dashboard() {
                 <div className="relative aspect-video bg-black rounded-b-slab border-x border-b border-mortar-strong overflow-hidden stone-shadow group-hover:border-secondary/40 transition-colors">
                   <video
                     controls
+                    preload="metadata"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                    poster="/babel-logo.png"
                   >
                     <source src="/demos/babel-terminal-demo.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
