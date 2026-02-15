@@ -126,6 +126,109 @@ export default function Dashboard() {
           <div className="tier-divider w-48 mx-auto" />
         </div>
 
+        {/* --- 🎬 Live Demo Sub-section --- */}
+        <div className="mb-20 bg-surface border-2 border-secondary/20 rounded-card p-6 md:p-10 ziggurat-shadow overflow-hidden relative">
+          {/* Subtle background texture */}
+          <div className="absolute inset-0 opacity-5 pointer-events-none brick-texture" />
+
+          <div className="relative z-10">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="bg-secondary p-3 rounded-slab bronze-glow">
+                <Activity className="w-8 h-8 text-background" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-secondary uppercase tracking-tighter">Live Demonstration</h3>
+                <p className="text-text-secondary text-sm">Watch the autonomous swarm evolve in real-time</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+              {/* Terminal Video Player */}
+              <div className="lg:col-span-8 group">
+                <div className="bg-mortar-strong rounded-t-slab px-4 py-2.5 flex items-center justify-between border-x border-t border-mortar-strong">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                  </div>
+                  <div className="text-[10px] font-mono text-text-muted uppercase tracking-[0.2em]">babel-terminal-demo.sh</div>
+                  <div className="w-10" />
+                </div>
+                <div className="relative aspect-video bg-black rounded-b-slab border-x border-b border-mortar-strong overflow-hidden stone-shadow group-hover:border-secondary/40 transition-colors">
+                  <video
+                    controls
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                    poster="/babel-logo.png"
+                  >
+                    <source src="/demos/babel-terminal-demo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  {/* Digital scanline overlay */}
+                  <div className="absolute inset-0 pointer-events-none bg-scanlines opacity-[0.03]" />
+                </div>
+              </div>
+
+              {/* Technical Details */}
+              <div className="lg:col-span-4 space-y-6 text-sm">
+                <div className="stone-tablet p-5 border border-mortar bg-background/40">
+                  <h4 className="text-secondary font-bold mb-3 flex items-center gap-2">
+                    <ChevronRight className="w-4 h-4" /> WHAT YOU&apos;LL SEE
+                  </h4>
+                  <ul className="space-y-2.5 text-text-secondary leading-tight">
+                    <li className="flex gap-2">
+                      <span className="text-primary">▸</span>
+                      <span>Agents detecting repeated patterns in the swarm transcript</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary">▸</span>
+                      <span>Consensus voting (3/5 majority required for adoption)</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary">▸</span>
+                      <span>Real-time on-chain registration via Solana PDAs</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary">▸</span>
+                      <span>Dialect versioning from v1 to v2 (Linguistic Speciation)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="stone-tablet p-5 border border-mortar bg-background/40">
+                  <h4 className="text-secondary font-bold mb-3 flex items-center gap-2">
+                    <ChevronRight className="w-4 h-4" /> SESSION METRICS
+                  </h4>
+                  <div className="grid grid-cols-2 gap-4 font-mono text-xs">
+                    <div>
+                      <div className="text-text-muted mb-1 uppercase tracking-tighter">Duration</div>
+                      <div className="text-text-primary">~2:00 MIN</div>
+                    </div>
+                    <div>
+                      <div className="text-text-muted mb-1 uppercase tracking-tighter">Agents</div>
+                      <div className="text-text-primary">5 HIVE WORKERS</div>
+                    </div>
+                    <div>
+                      <div className="text-text-muted mb-1 uppercase tracking-tighter">Efficiency</div>
+                      <div className="text-success font-bold">50% SAVINGS</div>
+                    </div>
+                    <div>
+                      <div className="text-text-muted mb-1 uppercase tracking-tighter">Network</div>
+                      <div className="text-text-primary">LOCALNET</div>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => scrollTo(proofRef)}
+                  className="w-full flex items-center justify-center gap-2 py-3 bg-secondary/10 border border-secondary/30 text-secondary hover:bg-secondary/20 rounded-slab font-bold transition-all uppercase tracking-widest text-xs"
+                >
+                  Verify Evidence <ExternalLink className="w-3 h-3" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <ArchCard title="BEFORE" color="muted">
             <div className="text-sm font-mono text-text-muted italic mb-4">&quot;{transcript_sample[0].original}&quot;</div>

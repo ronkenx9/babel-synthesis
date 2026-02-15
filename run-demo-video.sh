@@ -51,9 +51,9 @@ sleep 4
 # ---- STEP 1: Deploy Program ----
 banner "STEP 1: Deploying Babel Registry to Solana Localnet"
 
-echo -e "${GREEN}$ anchor deploy --provider.cluster localnet${NC}"
+echo -e "${GREEN}$ cd babel-registry && anchor deploy --provider.cluster localnet && cd ..${NC}"
 echo ""
-anchor deploy --provider.cluster localnet
+cd babel-registry && anchor deploy --provider.cluster localnet && cd ..
 pause
 
 # ---- STEP 2: Initialize Registry ----
