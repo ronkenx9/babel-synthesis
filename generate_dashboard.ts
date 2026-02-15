@@ -111,6 +111,49 @@ const html = `
             </div>
             <div class="version-badge">v${evidence.version || '1.0.0'}</div>
         </header>
+
+        <!-- LIVE DEMO SECTION -->
+        <div style="margin-bottom: 50px; background: #1e293b; border: 2px solid #334155; border-radius: 12px; padding: 30px; overflow: hidden;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                <div style="background: #38bdf8; padding: 10px; border-radius: 8px; color: #0f172a; font-weight: bold;">▶</div>
+                <div>
+                    <h3 style="margin: 0; color: #38bdf8; font-size: 1.5em;">LIVE DEMONSTRATION</h3>
+                    <p style="margin: 0; color: #94a3b8; font-size: 0.9em;">Real-time autonomous swarm recording</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+                <!-- Video Player -->
+                <div style="border-radius: 8px; overflow: hidden; border: 1px solid #334155;">
+                    <div style="background: #0f172a; padding: 8px 15px; border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 10px;">
+                        <span style="height: 10px; width: 10px; background: #ef4444; border-radius: 50%;"></span>
+                        <span style="height: 10px; width: 10px; background: #eab308; border-radius: 50%;"></span>
+                        <span style="height: 10px; width: 10px; background: #22c55e; border-radius: 50%;"></span>
+                        <span style="margin-left: 10px; font-family: monospace; font-size: 0.8em; color: #64748b;">babel-terminal-demo.sh</span>
+                    </div>
+                    <video controls style="width: 100%; display: block;" poster="babel_logo_final_1771069997709.png">
+                        <source src="packages/dashboard/public/demos/babel-terminal-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <!-- Details -->
+                <div style="font-size: 0.9em; display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; border: 1px solid #334155;">
+                        <strong style="color: #38bdf8; display: block; margin-bottom: 10px;">WHAT YOU'LL SEE:</strong>
+                        <ul style="margin: 0; padding-left: 20px; color: #cbd5e1; line-height: 1.6;">
+                            <li>Swarm pattern detection</li>
+                            <li>Consensus voting (3/5 majority)</li>
+                            <li>On-Chain PDA registration</li>
+                            <li>Live token compression</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center; color: #64748b; font-family: monospace;">
+                        VERIFICATION: UNCUT TERMINAL FOOTAGE
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="grid">
             <div class="card">
